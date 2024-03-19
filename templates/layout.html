@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="KO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            No title
+        {% endblock%}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> | 
+        <a href="/about">Anout</a> | 
+        <a href="/post">Post</a>
+    </nav>
+    <main>
+        {% block content %}
+            No contents
+        {% endblock %}
+    </main>
+</body>
+</html>
