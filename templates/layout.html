@@ -14,9 +14,13 @@
 </head>
 <body>
     <nav>
-        <a href="/">Home</a> | 
-        <a href="/about">Anout</a> | 
-        <a href="{% url 'post' %}">Post</a>
+        <a href="/"><span>Home</span></a> | 
+        <a href="/about"><span>About</span></a> | 
+        {% comment %} # post에 있는 list를 가져와 {% endcomment %}
+        <a href="{% url 'post:list' %}"><span>Post</span></a> |
+        <a href="{% url 'users:register' %}"><span>Join</span></a> |
+        <a href="{% url 'users:login' %}"><span>Login</span></a> |
+        <a href="/admin"><span role='img' aria-label='admin' title='admin'>👀</span></a> 
     </nav>
     <main>
         {% block content %}

@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+    
+{% block content %}
+    <section>
+        <article>
+            <img 
+                class = 'top_banner'
+                src="{{ post.banner.url }}" 
+                alt="{{ post.title }}"
+                />
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.date }}</p>
+            <p>{{ post.body }}</p>
+            <p>{{ pk }}</p>
+        </article>
+        <p>
+            <a href="{% url 'post:list' %}">목록으로</a>
+            <a href="{% url 'post:list' %}">Go to prev article</a>
+        </p>
+    </section>
+{% endblock %}

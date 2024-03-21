@@ -9,9 +9,9 @@
         <h1>Post list</h1>
         {% for post in posts %}
             <article>
-                <h2>
-                    <a href="{% url 'page' slug=post.slug %}">{{ post.title }}</a>
-                </h2>
+                <h3>
+                    <a href="{% url 'post:page' slug=post.slug %}">{{ post.title }}</a>
+                </h3>
                 <p>{{ post.date }}</p>
                 <p>{{ post.body }}</p>
             </article>
