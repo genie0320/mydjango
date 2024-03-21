@@ -18,8 +18,13 @@
         <a href="/about"><span>About</span></a> | 
         {% comment %} # post에 있는 list를 가져와 {% endcomment %}
         <a href="{% url 'post:list' %}"><span>Post</span></a> |
+        <a href="{% url 'post:new-post' %}"><span>New</span></a> |
         <a href="{% url 'users:register' %}"><span>Join</span></a> |
         <a href="{% url 'users:login' %}"><span>Login</span></a> |
+        <form class='logout' action="{% url 'users:logout' %}" method='post'>
+            {% csrf_token %}
+            <span class='logout-button'><button >logout</button></span>
+        </form>       
         <a href="/admin"><span role='img' aria-label='admin' title='admin'>👀</span></a> 
     </nav>
     <main>
